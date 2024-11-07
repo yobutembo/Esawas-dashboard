@@ -8,7 +8,8 @@ export default {
       lg: "976px",
       xl: "1440px",
     },
-    // colors: {
+    colors: {
+      "text-blue":"#1c3d5a"
     //   blue: "#1fb6ff",
     //   purple: "#7e5bef",
     //   pink: "#ff49db",
@@ -18,7 +19,7 @@ export default {
     //   "gray-dark": "#273444",
     //   gray: "#8492a6",
     //   "gray-light": "#d3dce6",
-    // },
+    },
     fontFamily: {
       sans: ["Graphik", "sans-serif"],
       serif: ["Merriweather", "serif"],
