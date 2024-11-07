@@ -3,7 +3,7 @@ import { IoPersonSharp } from "react-icons/io5";
 
 const Header = () => {
   return (
-    <header className="bg-gray-800 text-white">
+    <header className="bg-light-blue">
       <nav className="flex px-0 justify-around md:justify-between md:px-6 py-2">
         <div>
           <Link to="/">
