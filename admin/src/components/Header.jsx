@@ -1,13 +1,22 @@
-import React from "react";
+import { Link } from "react-router-dom";
+import { IoPersonSharp } from "react-icons/io5";
 
 const Header = () => {
   return (
-    <header className="bg-gray-800 flex justify-center">
-      <div className="px-4 py-3">
-        <h1 className="text-xl text-white">
-          Organizational Level Mapping Dashboard - Burundi, Uganda, Zambia.
-        </h1>
-      </div>
+    <header className="bg-gray-800 text-white">
+      <nav className="flex px-0 justify-around md:justify-between md:px-6 py-2">
+        <div>
+          <Link to="/">
+            <p className="text-xl  font-bold">Esawas</p>
+          </Link>
+        </div>
+        <div>
+          <Link to="/login" className="flex items-center space-x-1 px-2 py-1 ">
+            <IoPersonSharp />
+            Sign In
+          </Link>
+        </div>
+      </nav>
     </header>
   );
 };
