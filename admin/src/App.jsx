@@ -7,6 +7,7 @@ const App = () => {
     <>
       <Header />
       <main>
+        <h1 className="text-navy-blue text-2xl">Heloo</h1>
         <Outlet />
       </main>
     </>
