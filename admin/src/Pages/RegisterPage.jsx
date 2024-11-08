@@ -1,8 +1,20 @@
-import React from "react";
+import { useState } from "react";
 import { FaUserCircle } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const RegisterPage = () => {
+  const [registerData, setRegisterData] = useState({
+    name: "",
+    email: "",
+    password: "",
+  });
+
+  const handleChange = (e) => {
+    setRegisterData((prevData) => ({
+      ...prevData,
+      [e.target.nam]: e.target.value,
+    }));
+  };
   return (
     <div className="flex items-center justify-center mt-8 bg-white">
       <div className="bg-white p-8 shadow-lg w-full max-w-md">
