@@ -1,8 +1,20 @@
-import React from "react";
+import { useState } from "react";
 import { FaUserCircle } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const RegisterPage = () => {
+  const [registerData, setRegisterData] = useState({
+    name: "",
+    email: "",
+    password: "",
+  });
+
+  const handleChange = (e) => {
+    setRegisterData((prevData) => ({
+      ...prevData,
+      [e.target.nam]: e.target.value,
+    }));
+  };
   return (
     <div className="flex items-center justify-center mt-8 bg-white">
       <div className="bg-white p-8 shadow-lg w-full max-w-md">
@@ -14,15 +26,15 @@ const RegisterPage = () => {
         </h2>
         <form>
           <div className="mb-4">
-            <label htmlFor="email" className="block text-light-dark-blue mb-1">
-              Email
+            <label htmlFor="name" className="block text-light-dark-blue mb-1">
+              Name
             </label>
             <input
-              type="email"
-              id="email"
-              name="email"
+              type="name"
+              id="name"
+              name="name"
               className="w-full px-4 py-2 border border-light-blue rounded focus:outline-none focus:ring-2 focus:ring-blue"
-              placeholder="Enter your email"
+              placeholder="Enter your name"
             />
           </div>
           <div className="mb-4">

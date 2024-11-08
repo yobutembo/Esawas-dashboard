@@ -8,18 +8,19 @@ export default {
       lg: "976px",
       xl: "1440px",
     },
-    colors: {
-      "text-blue":"#1c3d5a"
-    //   blue: "#1fb6ff",
-    //   purple: "#7e5bef",
-    //   pink: "#ff49db",
-    //   orange: "#ff7849",
-    //   green: "#13ce66",
-    //   yellow: "#ffc82c",
-    //   "gray-dark": "#273444",
-    //   gray: "#8492a6",
-    //   "gray-light": "#d3dce6",
-    },
+    // colors: {
+    //   blue: {
+    //     50: "#ebf5ff", // Light blue background color
+    //     100: "#d1e9ff", // Hover background for survey cards
+    //     600: "#1d4ed8", // Text color for survey links
+    //     700: "#1e40af", // Text color for headings
+    //     800: "#1e3a8a", // Welcome message color
+    //   },
+    //   gray: {
+    //     600: "#4b5563", // Text color for labels in table
+    //   },
+    //   white: "#ffffff",
+    // },
     fontFamily: {
       sans: ["Graphik", "sans-serif"],
       serif: ["Merriweather", "serif"],
