@@ -9,12 +9,16 @@ export default {
       xl: "1440px",
     },
     colors: {
-      blue: "#0D92F4",
-      "ligh-blue": "#37AFE1",
-      "light-dark-blue": "#133E87",
-      "navy-blue": "#091057",
-      black: "#000",
-      white: "#fff",
+      "text-blue":"#1c3d5a"
+    //   blue: "#1fb6ff",
+    //   purple: "#7e5bef",
+    //   pink: "#ff49db",
+    //   orange: "#ff7849",
+    //   green: "#13ce66",
+    //   yellow: "#ffc82c",
+    //   "gray-dark": "#273444",
+    //   gray: "#8492a6",
+    //   "gray-light": "#d3dce6",
     },
     fontFamily: {
       sans: ["Graphik", "sans-serif"],
