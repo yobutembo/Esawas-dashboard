@@ -7,7 +7,7 @@ import connectDB from "./config/db.js";
 import userRoutes from "./routes/userRoutes.js";
 
 const app = express();
-const PORT = process.env.PORT || 8000;
+const port = process.env.PORT || 8000;
 dotenv.config();
 
 connectDB();
@@ -26,8 +26,8 @@ app.get("/", (req, res) => {
 });
 
 //Routes
-app.use("api/users", userRoutes);
+app.use("/api/users", userRoutes);
 
 app.listen(process.env.PORT, () => {
-  console.log(`Server is running on port ${process.env.PORT}`);
+  console.log(`Server is running on port ${process.env.PORT || 8000}`);
 });
