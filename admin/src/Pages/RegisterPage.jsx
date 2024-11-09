@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { FaUserCircle } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { BASE_URL } from "../constants";
 
 const RegisterPage = () => {
   const [registerData, setRegisterData] = useState({
@@ -12,8 +13,34 @@ const RegisterPage = () => {
   const handleChange = (e) => {
     setRegisterData((prevData) => ({
       ...prevData,
-      [e.target.nam]: e.target.value,
+      [e.target.name]: e.target.value,
     }));
+  };
+
+  const navigate = useNavigate();
+  const handleRegister = async (e) => {
+    e.preventDefault();
+
+    try {
+      const response = await fetch(`${BASE_URL}/users`, {
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        method: "POST",
+        body: JSON.stringify(registerData),
+      });
+
+      const user = await response.json();
+      if (user) {
+        localStorage.setItem("userInfo", JSON.stringify(user));
+        navigate("/dashboard");
+      } else {
+        alert("Error occured");
+      }
+    } catch (error) {
+      console.log(error?.data?.message);
+    }
   };
   return (
     <div className="flex items-center justify-center mt-8 bg-white">
@@ -24,7 +51,7 @@ const RegisterPage = () => {
         <h2 className="text-2xl font-semibold text-center text-navy-blue mb-4">
           Sign Up
         </h2>
-        <form>
+        <form onSubmit={handleRegister}>
           <div className="mb-4">
             <label htmlFor="name" className="block text-light-dark-blue mb-1">
               Name
@@ -35,6 +62,8 @@ const RegisterPage = () => {
               name="name"
               className="w-full px-4 py-2 border border-light-blue rounded focus:outline-none focus:ring-2 focus:ring-blue"
               placeholder="Enter your name"
+              value={registerData.name}
+              onChange={handleChange}
             />
           </div>
           <div className="mb-4">
@@ -47,6 +76,8 @@ const RegisterPage = () => {
               name="email"
               className="w-full px-4 py-2 border border-light-blue rounded focus:outline-none focus:ring-2 focus:ring-blue"
               placeholder="Enter your email"
+              value={registerData.email}
+              onChange={handleChange}
             />
           </div>
           <div className="mb-6">
@@ -62,6 +93,8 @@ const RegisterPage = () => {
               name="password"
               className="w-full px-4 py-2 border border-light-blue rounded focus:outline-none focus:ring-2 focus:ring-blue"
               placeholder="Enter your password"
+              value={registerData.password}
+              onChange={handleChange}
             />
           </div>
           <button
