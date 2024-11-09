@@ -2,9 +2,10 @@ import React, { useState } from "react";
 import DynamicTable from "../components/DynamicTable";
 
 const Dashboard = () => {
+  const userInfo = JSON.parse(localStorage.getItem("userInfo"));
   const firstName = "Francis";
   const fullName = "Francis Lufwendo";
-  const organization = "Ewasas";
+  const organization = "Esawas";
   const country = "Zambia";
   const [showTooltip, setShowTooltip] = useState({
     card1: false,
@@ -15,7 +16,7 @@ const Dashboard = () => {
     <div className="dashboard-container p-4 md:p-8 bg-blue-100 min-h-screen">
       {/* Welcome Heading */}
       <h2 className="text-2xl font-semibold text-blue-800 mb-6">
-        Welcome, {firstName}!
+        Welcome, {userInfo.name}!
       </h2>
 
       {/* User Information Table */}
@@ -27,7 +28,7 @@ const Dashboard = () => {
           <tbody>
             <tr className="border-b">
               <th className="p-2 text-gray-600">Fullname:</th>
-              <td className="p-2">{fullName}</td>
+              <td className="p-2">{userInfo.name}</td>
             </tr>
             <tr className="border-b">
               <th className="p-2 text-gray-600">Organization:</th>

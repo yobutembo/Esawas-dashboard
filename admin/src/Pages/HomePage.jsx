@@ -10,13 +10,13 @@ const HomePage = () => {
         </h1>
         <p className="mt-4 text-lg md:text-xl text-blue-800 max-w-md mx-auto">
           Begin your journey to impactful data collection. Login to start your
-          survey!
+          assessment!
         </p>
       </header>
 
       <div className="mt-10">
         <img
-          src={logo} // image
+          src={logo}
           alt="Esawas Illustration"
           className="w-full max-w-md mx-auto shadow-lg rounded-lg"
         />
