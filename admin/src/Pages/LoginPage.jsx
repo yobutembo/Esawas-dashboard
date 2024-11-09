@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { FaUserCircle } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
+import { BASE_URL } from "../constants";
 
 const LoginPage = () => {
   const [loginData, setLoginData] = useState({
@@ -15,11 +16,12 @@ const LoginPage = () => {
     }));
   };
   const navigate = useNavigate();
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
-      const response = await fetch("http://localhost:8000/api/users/login", {
+      const response = await fetch(`${BASE_URL}/users/login`, {
         method: "POST",
         headers: {
           Accept: "application/json",
@@ -40,8 +42,7 @@ const LoginPage = () => {
         alert("Error occured");
       }
     } catch (error) {
-      console.error("Error:", error);
-      alert("Login failed. Please check your credentials and try again.");
+      console.log(error);
     }
   };
 
